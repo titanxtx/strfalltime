@@ -5,13 +5,22 @@ Made this since i couldn't find an easy solution to convert epoch to whatever st
 
 I decided not to use flash memory for saving the months and day names since it slows down the arduino in general. Anyone can change the return type and all that if they want. I wanted this to work on everything also and not just the arduino.
 
-%z and %Z are not implemented. 
-
+%z and %Z are not implemented. Check out the original strftime documentation for the other parameters that can be used.
+#### Usage
 ```
 #include "strfalltime.h"
 ```
-
-#Extra features
+#### Function
+```
+time_t z;
+time(&z);
+struct tm *test=localtime(&z);
+char buffer[60];
+char str[]="%c%1";
+size_t len=strfalltime(buffer,sizeof(buffer),str,test);
+printf("len:%d str:%s\n",len,buffer);
+```
+#### Extra features
 ```
 %c%1 - Monday March 01 02:30:35 PM 2019
 %c%2 - Monday March 01 21:30:35 2019
