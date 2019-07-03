@@ -6,6 +6,11 @@ Made this since i couldn't find an easy solution to convert epoch to whatever st
 I decided not to use flash memory for saving the months and day names since it slows down the arduino in general. Anyone can change the return type and all that if they want. I wanted this to work on everything also and not just the arduino.
 
 %z and %Z are not implemented. 
+
+```
+#include "strfalltime.h"
+```
+
 #Extra features
 ```
 %c%1 - Monday March 01 02:30:35 PM 2019
