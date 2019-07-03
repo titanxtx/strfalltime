@@ -167,7 +167,7 @@ size_t strfalltime(char*ptr,size_t maxsize,char*format, struct tm* timeptr){
                     j+=3;
                     break;
                 case 'A':
-                    strncpy(&ptr[j],strfalltime_weekday(timeptr->tm_wday,&amt),amt);
+                    strcpy(&ptr[j],strfalltime_weekday(timeptr->tm_wday,&amt));
                     j+=amt;
                     break;
                 case 'b': 
@@ -175,7 +175,7 @@ size_t strfalltime(char*ptr,size_t maxsize,char*format, struct tm* timeptr){
                     j+=3;
                     break;
                 case 'B': 
-                    strncpy(&ptr[j],strfalltime_month(timeptr->tm_mon,&amt),amt);
+                    strcpy(&ptr[j],strfalltime_month(timeptr->tm_mon,&amt));
                     j+=amt;
                     break;
                 case 'c':
